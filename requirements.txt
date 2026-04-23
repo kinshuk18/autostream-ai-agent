@@ -1,0 +1,14 @@
+# AutoStream Agent — Python Dependencies
+# Compatible with Python 3.9+
+
+# LangGraph — agentic workflow orchestration
+langgraph>=0.2.0
+
+# LangChain core abstractions (messages, runnables, etc.)
+langchain-core>=0.3.0
+
+# LangChain × Google GenAI integration (Gemini models)
+langchain-google-genai>=1.0.0
+
+# Type hint backports for Python 3.9/3.10 compatibility
+typing-extensions>=4.9.0

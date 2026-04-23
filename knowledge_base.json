@@ -1,0 +1,87 @@
+{
+  "company": {
+    "name": "AutoStream",
+    "tagline": "Automated video editing tools for content creators",
+    "website": "https://autostream.io"
+  },
+  "plans": [
+    {
+      "id": "basic",
+      "name": "Basic Plan",
+      "price_monthly": 29,
+      "currency": "USD",
+      "billing_cycle": "monthly",
+      "features": [
+        "10 videos per month",
+        "720p resolution export",
+        "Basic editing tools",
+        "Email support"
+      ],
+      "limits": {
+        "videos_per_month": 10,
+        "max_resolution": "720p",
+        "ai_captions": false,
+        "support_level": "email"
+      }
+    },
+    {
+      "id": "pro",
+      "name": "Pro Plan",
+      "price_monthly": 79,
+      "currency": "USD",
+      "billing_cycle": "monthly",
+      "features": [
+        "Unlimited videos per month",
+        "4K resolution export",
+        "AI-powered captions",
+        "Priority 24/7 support",
+        "Advanced editing tools",
+        "Custom branding"
+      ],
+      "limits": {
+        "videos_per_month": "unlimited",
+        "max_resolution": "4K",
+        "ai_captions": true,
+        "support_level": "24/7 priority"
+      }
+    }
+  ],
+  "policies": [
+    {
+      "id": "refund_policy",
+      "title": "Refund Policy",
+      "description": "Refunds are available within the first 7 days of subscription. No refunds are issued after the 7-day window has passed.",
+      "details": {
+        "refund_window_days": 7,
+        "no_refund_after": "7 days from purchase date"
+      }
+    },
+    {
+      "id": "support_policy",
+      "title": "Customer Support Policy",
+      "description": "24/7 customer support is exclusively available to Pro plan subscribers. Basic plan subscribers receive email support during business hours.",
+      "details": {
+        "basic_support": "Email support, business hours only",
+        "pro_support": "24/7 priority support via chat, email, and phone"
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I upgrade from Basic to Pro at any time?",
+      "answer": "Yes, you can upgrade to the Pro plan at any time. The price difference will be prorated for the remainder of your billing cycle."
+    },
+    {
+      "question": "What platforms does AutoStream support for publishing?",
+      "answer": "AutoStream supports direct publishing and optimization for YouTube, Instagram, TikTok, Facebook, and Twitter/X."
+    },
+    {
+      "question": "Is there a free trial?",
+      "answer": "AutoStream offers a 7-day money-back guarantee. If you are not satisfied within the first 7 days, you can request a full refund."
+    },
+    {
+      "question": "What video formats are supported?",
+      "answer": "AutoStream supports MP4, MOV, AVI, and MKV input formats. All exports are delivered as optimized MP4 files."
+    }
+  ]
+}
