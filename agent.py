@@ -1,6 +1,5 @@
 """
 AutoStream Social-to-Lead Agentic Workflow
-==========================================
 A LangGraph-powered conversational AI agent for AutoStream SaaS.
 Handles intent classification, RAG-based Q&A, and lead capture.
 """
@@ -33,7 +32,7 @@ def retrieve_knowledge(query: str, kb: dict) -> str:
     query_lower = query.lower()
     relevant_chunks = []
 
-    # --- Pricing / Plan retrieval ---
+    # Pricing / Plan retrieval
     plan_keywords = ["price", "cost", "plan", "pricing", "basic", "pro", "month",
                      "4k", "720p", "resolution", "video", "caption", "unlimited"]
     if any(kw in query_lower for kw in plan_keywords):
@@ -45,14 +44,14 @@ def retrieve_knowledge(query: str, kb: dict) -> str:
             )
             relevant_chunks.append(chunk)
 
-    # --- Policy retrieval ---
+    # Policy retrieval
     policy_keywords = ["refund", "cancel", "support", "help", "policy", "return", "money back", "24/7"]
     if any(kw in query_lower for kw in policy_keywords):
         for policy in kb.get("policies", []):
             chunk = f"Policy [{policy['title']}]: {policy['description']}"
             relevant_chunks.append(chunk)
 
-    # --- FAQ retrieval ---
+    # FAQ retrieval
     faq_keywords = ["trial", "free", "upgrade", "format", "publish", "platform", "youtube",
                     "instagram", "tiktok", "mp4", "mov"]
     if any(kw in query_lower for kw in faq_keywords):
@@ -60,7 +59,7 @@ def retrieve_knowledge(query: str, kb: dict) -> str:
             chunk = f"FAQ: Q: {faq['question']} A: {faq['answer']}"
             relevant_chunks.append(chunk)
 
-    # --- Fallback: return full plan+policy summary if nothing matched ---
+    # Fallback: return full plan+policy summary if nothing matched
     if not relevant_chunks:
         for plan in kb.get("plans", []):
             relevant_chunks.append(
@@ -258,7 +257,7 @@ def lead_collection_node(state: AgentState) -> dict:
             **updated_fields,
         }
 
-    # --- Otherwise, ask for the next missing field ---
+    # Otherwise, ask for the next missing field
     next_prompt = _build_lead_prompt(current_name, current_email, current_platform)
 
     return {
